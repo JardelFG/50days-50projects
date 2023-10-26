@@ -1,0 +1,169 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+
+* {
+  box-sizing: border-box;
+}
+
+html{
+  background: rgb(21, 20, 20);
+  overflow: hidden;
+}
+
+main {
+  font-family: 'Roboto', sans-serif;
+  display: grid;
+  justify-items: center;
+  grid-template-columns: 1fr 1fr;
+  text-align: center;
+  gap: 10px;
+  padding: 0 60px;
+}
+
+.magic {
+  background-color: #f9ca24;
+  color: #fff;
+  font-family: 'Poppins', sans-serif;
+  border: 0;
+  border-radius: 3px;
+  font-size: 16px;
+  padding: 12px 20px;
+  margin: 10px;
+  cursor: pointer;
+  top: 20px;
+  letter-spacing: 1px;
+  box-shadow: 0 3px rgba(249, 202, 36, 0.5);
+  z-index: 100;
+}
+
+.magic:focus {
+  outline: none;
+}
+
+.magic:active {
+  box-shadow: none;
+  transform: translateY(2px);
+}
+
+.boxes {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  height: 225px;
+  width: 225px;
+  position: relative;
+  transition: 0.4s ease;
+}
+
+/* styles box1 */
+.boxes.rollBox {
+  width: 250px;
+  height: 250px;
+}
+
+.boxes.rollBox .roll {
+  transform: rotateZ(360deg);
+}
+  
+.roll {
+  background-image: url('https://images.hdqwalls.com/wallpapers/hollow-knight-fan-art-8a.jpg');
+  background-repeat: no-repeat;
+  background-size: 225px 225px;
+  position: relative;
+  height: 56.25px;
+  width: 56.25px;
+  transition: 0.4s ease;
+}
+
+
+/* styles box2 */
+.spiral,#image-1, #image-2, #image-3, #image-4, #image-5, #image-6, #image-7, #image-8{
+  background-image: url('https://images.hdqwalls.com/wallpapers/hollow-knight-fan-art-8a.jpg');
+  background-repeat: no-repeat;
+  background-position:center;
+  background-size: 225px 225px;
+  display: flex;
+  justify-content:center;
+  align-items:center;
+}
+.animation-spiral{
+  animation: spiral 10s ease-in-out alternate infinite;
+}
+#image-2, #image-3, #image-4, #image-5, #image-6, #image-7, #image-8{
+  border-radius: 50%;
+  width: 90%;
+  height: 90%;
+}
+#image-1{
+  width: 98%;
+  height: 98%;
+}
+@keyframes spiral {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+/* styles box3 */
+.flip{
+  background-image: url('https://images.hdqwalls.com/wallpapers/hollow-knight-fan-art-8a.jpg');
+  background-repeat: no-repeat;
+  background-size: 225px 225px;
+  position: relative;
+  height: 100%; 
+  width: 100%;
+  /* transition: 2s; */
+}
+.animation-flip{
+  animation: flipped 2s ease
+}
+@keyframes flipped{
+  0% {
+    transform: rotateX(0deg);
+  }
+  20%{
+      scale: 1.2;
+  }
+  100% {
+    transform: rotateX(360deg);
+  }
+}
+
+/* styles box4 */
+.desintegrate{
+  background-image: url('https://images.hdqwalls.com/wallpapers/hollow-knight-fan-art-8a.jpg');
+  background-repeat: no-repeat;
+  background-size: 225px 225px;
+  position: relative;
+  height: 100%;
+  width: 100%;
+  transition: 0.4s ease;
+}
+
+
+/* 3d borders */
+.roll::after, #spiralBox::after, .flip::after, .desintegrate::after{
+  content: '';
+  background-color: #f6e58d;
+  position: absolute;
+  top: 8px;
+  right: -15px;
+  height: 100%;
+  width: 15px;
+  transform: skewY(45deg);
+}
+
+.roll::before, #spiralBox::before, .flip::before, .desintegrate::before{
+  content: '';
+  background-color: #f9ca24;
+  position: absolute;
+  bottom: -15px;
+  left: 6.7px;
+  height: 15px;
+  width: 100%;
+  transform: skewX(45deg);
+}
+
